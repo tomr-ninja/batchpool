@@ -32,6 +32,8 @@ func main() {
 			defer wg.Done()
 
 			for f := range filesToRead() {
+				defer f.Close()
+
 				s := bufio.NewScanner(f)
 
 				if err := batcher.Range(func(v *DataPoint) (next bool, err error) {
