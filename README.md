@@ -1,3 +1,5 @@
+**WORK IN PROGRESS**
+
 ## Usage
 
 ```go
@@ -8,10 +10,10 @@ type DataPoint struct {
 
 func main() {
     const (
-        ssssssreadWorkers = 10
-        uploadWorkers     = 10
-        batchSize         = 100
-        batchesBufSize    = 10
+        readWorkers    = 10
+        uploadWorkers  = 10
+        batchSize      = 100
+        batchesBufSize = 10
     )
 
     batcher := batchpool.NewBatcher[DataPoint](batchSize, batchesBufSize)
